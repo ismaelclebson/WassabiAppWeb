@@ -11,7 +11,7 @@ CREATE TABLE `Cliente` (
 CREATE TABLE `Produto` (
 	`produto_id` INT(30) NOT NULL AUTO_INCREMENT,
 	`produto_nome` varchar(80) NOT NULL,
-	`produto_preco` FLOAT(30,2) NOT NULL,
+	`produto_preco` DOUBLE(30,2) NOT NULL,
 	`produto_descricao` varchar(80) NOT NULL,
 	`produto_categoria` INT(10) NOT NULL,
 	PRIMARY KEY (`produto_id`)
@@ -20,7 +20,7 @@ CREATE TABLE `Produto` (
 CREATE TABLE `Venda` (
 	`Venda_id` INT(30) NOT NULL AUTO_INCREMENT,
 	`Venda_cliente` INT(30) NOT NULL,
-	`Venda_total` FLOAT(30,2) NOT NULL,
+	`Venda_total` DOUBLE(30,2) NOT NULL,
 	`Venda_data` DATETIME NOT NULL,
 	PRIMARY KEY (`Venda_id`)
 );
