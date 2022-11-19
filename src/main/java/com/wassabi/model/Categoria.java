@@ -1,5 +1,5 @@
 package com.wassabi.model;
-// Generated 18 de nov. de 2022 00:13:14 by Hibernate Tools 4.3.6.Final
+// Generated 19 de nov. de 2022 11:01:21 by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;

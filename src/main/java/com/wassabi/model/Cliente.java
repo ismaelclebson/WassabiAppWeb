@@ -1,5 +1,5 @@
 package com.wassabi.model;
-// Generated 18 de nov. de 2022 00:13:14 by Hibernate Tools 4.3.6.Final
+// Generated 19 de nov. de 2022 11:01:21 by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -115,5 +115,13 @@ public class Cliente implements java.io.Serializable {
 	public void setVendas(Set<Venda> vendas) {
 		this.vendas = vendas;
 	}
+
+        /** 
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "Cliente [clienteId=" + clienteId + ", clienteNome=" + clienteNome + ", clienteCpf=" + clienteCpf + ", cliente_endereco" + clienteEndereco +", clienteTelefone=" + clienteTelefone + "]";
+    }
 
 }

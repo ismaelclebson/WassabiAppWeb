@@ -1,5 +1,5 @@
 package com.wassabi.model;
-// Generated 18 de nov. de 2022 00:13:14 by Hibernate Tools 4.3.6.Final
+// Generated 19 de nov. de 2022 11:01:21 by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -21,21 +21,22 @@ public class VendaHasProduto implements java.io.Serializable {
 	private VendaHasProdutoId id;
 	private Produto produto;
 	private Venda venda;
+	private int quantidade;
 
 	public VendaHasProduto() {
 	}
 
-	public VendaHasProduto(VendaHasProdutoId id, Produto produto, Venda venda) {
+	public VendaHasProduto(VendaHasProdutoId id, Produto produto, Venda venda, int quantidade) {
 		this.id = id;
 		this.produto = produto;
 		this.venda = venda;
+		this.quantidade = quantidade;
 	}
 
 	@EmbeddedId
 
 	@AttributeOverrides({ @AttributeOverride(name = "vendaId", column = @Column(name = "venda_id", nullable = false)),
-			@AttributeOverride(name = "produtoId", column = @Column(name = "produto_id", nullable = false)),
-			@AttributeOverride(name = "quantidade", column = @Column(name = "quantidade", nullable = false)) })
+			@AttributeOverride(name = "produtoId", column = @Column(name = "produto_id", nullable = false)) })
 	public VendaHasProdutoId getId() {
 		return this.id;
 	}
@@ -64,4 +65,21 @@ public class VendaHasProduto implements java.io.Serializable {
 		this.venda = venda;
 	}
 
+	@Column(name = "quantidade", nullable = false)
+	public int getQuantidade() {
+		return this.quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+        /** 
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "VendaHasProduto [id=" + id + ", produto=" + produto + ", venda=" + venda + ", quantidade=" + quantidade
+                + "]";
+    }
 }

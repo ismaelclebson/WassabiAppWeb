@@ -1,5 +1,5 @@
 package com.wassabi.model;
-// Generated 18 de nov. de 2022 00:13:14 by Hibernate Tools 4.3.6.Final
+// Generated 19 de nov. de 2022 11:01:21 by Hibernate Tools 4.3.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,21 +24,21 @@ public class Produto implements java.io.Serializable {
 	private Integer produtoId;
 	private Categoria categoria;
 	private String produtoNome;
-	private float produtoPreco;
+	private double produtoPreco;
 	private String produtoDescricao;
 	private Set<VendaHasProduto> vendaHasProdutos = new HashSet<VendaHasProduto>(0);
 
 	public Produto() {
 	}
 
-	public Produto(Categoria categoria, String produtoNome, float produtoPreco, String produtoDescricao) {
+	public Produto(Categoria categoria, String produtoNome, double produtoPreco, String produtoDescricao) {
 		this.categoria = categoria;
 		this.produtoNome = produtoNome;
 		this.produtoPreco = produtoPreco;
 		this.produtoDescricao = produtoDescricao;
 	}
 
-	public Produto(Categoria categoria, String produtoNome, float produtoPreco, String produtoDescricao,
+	public Produto(Categoria categoria, String produtoNome, double produtoPreco, String produtoDescricao,
 			Set<VendaHasProduto> vendaHasProdutos) {
 		this.categoria = categoria;
 		this.produtoNome = produtoNome;
@@ -79,11 +79,11 @@ public class Produto implements java.io.Serializable {
 	}
 
 	@Column(name = "produto_preco", nullable = false, precision = 30)
-	public float getProdutoPreco() {
+	public double getProdutoPreco() {
 		return this.produtoPreco;
 	}
 
-	public void setProdutoPreco(float produtoPreco) {
+	public void setProdutoPreco(double produtoPreco) {
 		this.produtoPreco = produtoPreco;
 	}
 
@@ -104,5 +104,14 @@ public class Produto implements java.io.Serializable {
 	public void setVendaHasProdutos(Set<VendaHasProduto> vendaHasProdutos) {
 		this.vendaHasProdutos = vendaHasProdutos;
 	}
+
+    /** 
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "Produto [produtoId=" + produtoId + ", categoria=" + categoria + ", produtoNome=" + produtoNome
+                + ", produtoPreco=" + produtoPreco + ", produtoDescricao=" + produtoDescricao + "]";
+    }
 
 }

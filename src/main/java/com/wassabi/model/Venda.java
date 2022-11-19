@@ -1,5 +1,5 @@
 package com.wassabi.model;
-// Generated 18 de nov. de 2022 00:13:14 by Hibernate Tools 4.3.6.Final
+// Generated 19 de nov. de 2022 11:01:21 by Hibernate Tools 4.3.6.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -26,20 +26,20 @@ public class Venda implements java.io.Serializable {
 
 	private Integer vendaId;
 	private Cliente cliente;
-	private float vendaTotal;
+	private double vendaTotal;
 	private Date vendaData;
 	private Set<VendaHasProduto> vendaHasProdutos = new HashSet<VendaHasProduto>(0);
 
 	public Venda() {
 	}
 
-	public Venda(Cliente cliente, float vendaTotal, Date vendaData) {
+	public Venda(Cliente cliente, double vendaTotal, Date vendaData) {
 		this.cliente = cliente;
 		this.vendaTotal = vendaTotal;
 		this.vendaData = vendaData;
 	}
 
-	public Venda(Cliente cliente, float vendaTotal, Date vendaData, Set<VendaHasProduto> vendaHasProdutos) {
+	public Venda(Cliente cliente, double vendaTotal, Date vendaData, Set<VendaHasProduto> vendaHasProdutos) {
 		this.cliente = cliente;
 		this.vendaTotal = vendaTotal;
 		this.vendaData = vendaData;
@@ -69,11 +69,11 @@ public class Venda implements java.io.Serializable {
 	}
 
 	@Column(name = "Venda_total", nullable = false, precision = 30)
-	public float getVendaTotal() {
+	public double getVendaTotal() {
 		return this.vendaTotal;
 	}
 
-	public void setVendaTotal(float vendaTotal) {
+	public void setVendaTotal(double vendaTotal) {
 		this.vendaTotal = vendaTotal;
 	}
 
@@ -95,5 +95,13 @@ public class Venda implements java.io.Serializable {
 	public void setVendaHasProdutos(Set<VendaHasProduto> vendaHasProdutos) {
 		this.vendaHasProdutos = vendaHasProdutos;
 	}
+
+    /** 
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "Venda [vendaId=" + vendaId + ", cliente=" + cliente + ", vendaTotal=" + vendaTotal + "]";
+    }
 
 }

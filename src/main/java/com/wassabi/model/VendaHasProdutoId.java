@@ -1,5 +1,5 @@
 package com.wassabi.model;
-// Generated 18 de nov. de 2022 00:13:14 by Hibernate Tools 4.3.6.Final
+// Generated 19 de nov. de 2022 11:01:21 by Hibernate Tools 4.3.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -12,15 +12,13 @@ public class VendaHasProdutoId implements java.io.Serializable {
 
 	private int vendaId;
 	private int produtoId;
-	private int quantidade;
 
 	public VendaHasProdutoId() {
 	}
 
-	public VendaHasProdutoId(int vendaId, int produtoId, int quantidade) {
+	public VendaHasProdutoId(int vendaId, int produtoId) {
 		this.vendaId = vendaId;
 		this.produtoId = produtoId;
-		this.quantidade = quantidade;
 	}
 
 	@Column(name = "venda_id", nullable = false)
@@ -41,15 +39,6 @@ public class VendaHasProdutoId implements java.io.Serializable {
 		this.produtoId = produtoId;
 	}
 
-	@Column(name = "quantidade", nullable = false)
-	public int getQuantidade() {
-		return this.quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
 	public boolean equals(Object other) {
 		if ((this == other))
 			return true;
@@ -59,8 +48,7 @@ public class VendaHasProdutoId implements java.io.Serializable {
 			return false;
 		VendaHasProdutoId castOther = (VendaHasProdutoId) other;
 
-		return (this.getVendaId() == castOther.getVendaId()) && (this.getProdutoId() == castOther.getProdutoId())
-				&& (this.getQuantidade() == castOther.getQuantidade());
+		return (this.getVendaId() == castOther.getVendaId()) && (this.getProdutoId() == castOther.getProdutoId());
 	}
 
 	public int hashCode() {
@@ -68,8 +56,15 @@ public class VendaHasProdutoId implements java.io.Serializable {
 
 		result = 37 * result + this.getVendaId();
 		result = 37 * result + this.getProdutoId();
-		result = 37 * result + this.getQuantidade();
 		return result;
 	}
+
+    /** 
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "VendaHasProdutoId [vendaId=" + vendaId + ", produtoId=" + produtoId + "]";
+    }
 
 }
